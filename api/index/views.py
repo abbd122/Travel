@@ -1,13 +1,12 @@
-from flask import render_template
+from flask import request, jsonify
 
-from api.index import index_blu
-
-
-@index_blu.route('/', methods=['GET', 'POST'])
-def index():
-    return render_template('index.html', name='Wang')
+from api.index import home_blu
+from api.index.utils.handle_json import handle_json
 
 
-@index_blu.route('/todo')
-def todo_list():
-    return render_template('todolist.html')
+@home_blu.route('/home')
+def home():
+  path = request.args.get('path')
+  json_dict = handle_json(path)
+  return jsonify(json_dict)
+
