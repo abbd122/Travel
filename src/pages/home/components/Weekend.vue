@@ -2,7 +2,7 @@
     <div>
         <div class="title">周末去哪</div>
         <ul>
-            <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+            <li class="item border-bottom" v-for="item of list" :key="item.id">
                 <div class="item-img-wrapper">
                     <img class="item-img" :src="item.imgUrl">
                 </div>
@@ -18,25 +18,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1507/d9/2ddc7652fdba16.jpg_r_640x214_5e62f1a3.jpg',
-        title: '深圳野生动物园',
-        desc: '22467条评论'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1811/15/66f14e0fd6fbb.jpg_r_640x214_5d69f21d.jpg',
-        title: '深圳野生动物园',
-        desc: '22467条评论'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1811/b8/5d599bbdcf8b57.jpg_r_640x214_2ee055e3.jpg',
-        title: '深圳野生动物园',
-        desc: '22467条评论'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
@@ -50,7 +33,7 @@ export default {
     .item-img-wrapper
         overflow: hidden
         height: 0
-        padding-bottom: 33.9%
+        padding-bottom: 37.09%
         .item-img
             width: 100%
     .item-info
