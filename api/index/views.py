@@ -10,12 +10,3 @@ def home():
   json_dict = handle_json(path)
   return jsonify(json_dict)
 
-
-# @home_blu.route('/home')
-# def home():
-#   response_dict = {
-#     'data': {'city': '北京'},
-#     'ret': True
-#   }
-#   response = jsonify(response_dict)
-#   return response, 200
